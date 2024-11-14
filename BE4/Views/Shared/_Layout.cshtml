@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<style>
+    header {
+        font-family: Arial,sans-serif;
+        max-width: 100%;
+    }
+
+    /* .header {
+        max-width: 100%;
+    }*/
+
+    .topBar {
+        background-color: #dbfceb;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .homeHeader {
+        /*  display:flex;*/
+        background-color: #ffffff; /* Màu nền cho header */
+        /*border-bottom: 1px solid #e0e0e0;*/ /* Đường viền dưới cho header */
+        /*padding: 20px;*/ /* Khoảng cách bên trong cho header */
+        width: 90%;
+    }
+
+    .topBar span b {
+        color: #1b8442;
+        font-size: 12px;
+    }
+
+    .topBar span strong {
+        font-style: italic;
+    }
+
+        .topBar span strong a {
+            color: #274ad4;
+        }
+
+    .mainBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: white;
+    }
+
+    .logo {
+        display: flex; /* Sử dụng flexbox để dễ dàng căn chỉnh */
+        flex-direction: column; /* Căn chỉnh theo chiều dọc */
+        align-items: center; /* Căn giữa các phần tử */
+        width: 10%;
+    }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: #007bff;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+    .wrapSearch {
+        display: flex; /* Sử dụng flexbox để bố trí */
+        justify-content: space-between; /*Căn chỉnh các phần tử ở hai đầu*/
+        align-items: center; /*Căn chỉnh theo chiều dọc*/
+    }
+
+    .searchBar {
+        position: relative;
+        display: flex;
+        flex: 1;
+        margin-left: 20px;
+        max-width: 100%;
+    }
+
+    .search-icon {
+        border-radius: 5px;
+        padding: 10px 10px 10px 40px;
+        border: 1px solid #ddd;
+        /*position: absolute;*/ /* Đặt biểu tượng ở vị trí tuyệt đối */
+        margin-left: 10px; /* Khoảng cách từ bên trái */
+        color: #999; /* Màu biểu tượng */
+    }
+
+    input[type="text"] {
+        flex: 1; /* Thanh input chiếm không gian còn lại */
+        padding: 10px 10px 10px 40px; /* Padding cho input */
+        border: none; /* Bỏ viền cho input */
+        border-radius: 5px; /* Bo góc cho input */
+        font-size: 16px; /* Kích thước chữ trong input */
+        outline: none; /* Bỏ viền khi chọn */
+    }
+
+
+    .searchBar input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .searchBar button {
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .searchSuggestions {
+        margin-top: 10px;
+        padding: 10px 0;
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: space-around; /* Canh đều các từ khóa */
+        font-size: 14px;
+    }
+
+        .searchSuggestions span {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+            .searchSuggestions span:hover {
+                text-decoration: underline;
+            }
+
+    .userMenu {
+        justify-content: center;
+    }
+
+        .userMenu menu {
+            justify-content: center;
+        }
+
+        .userMenu a {
+            margin-left: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+    .quicklinksContainer {
+        /*display: flex;*/ /* Sử dụng flexbox để bố trí các liên kết */
+        /*justify-content: space-around;*/ /* Căn chỉnh các liên kết cách đều */
+        padding: 10px 0; /* Khoảng cách bên trên và dưới */
+        margin-left: 20px;
+    }
+
+        .quicklinksContainer a {
+            text-decoration: none; /* Xóa gạch chân cho liên kết */
+            color: lightgrey; /* Màu chữ cho liên kết nhanh */
+            margin-left: 10px;
+        }
+
+    .cartIcon {
+        font-size: 18px;
+    }
+
+    .navigationBar {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background-color: white;
+    }
+
+    .location {
+        display: flex; /* Sử dụng flexbox để bố trí */
+        align-items: center; /* Căn chỉnh theo chiều dọc */
+        margin-top: 10px; /* Khoảng cách bên trên */
+    }
+
+        .location .title {
+            margin: 0 5px; /* Khoảng cách bên trái và phải cho tiêu đề */
+            font-size: 16px; /* Kích thước chữ cho tiêu đề */
+            color: lightgray;
+        }
+
+    .bottomRoot {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .categories {
+        margin-left: 40px;
+    }
+
+        .categories a {
+            margin-right: 15px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .categories a b {
+                color: blue;
+            }
+
+    section {
+        background-color: white;
+        min-height: 300px;
+    }
+
+    .menu a {
+        text-decoration: none;
+    }
+
+    .logo a {
+        text-decoration: none;
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div id="containerHeader">
+        <header>
+            @*<section class="header">*@
+            <div>
+                <div class="topBar">
+                    <span><b>Freeship đơn từ 45k, giảm nhiều hơn cùng</b><strong><b> <a>FREESHIP</a> XTRA</b></strong></span>
+
+                </div>
+                <div class="mainBar">
+                    <div class="logo">
+                        <a href="~/Home/Index"> 
+                        <img src="~/Content/img/Logotiki.png" alt="Tiki logo "/>
+                        </a>
+                        <span>Tốt & Nhanh</span>
+
+                    </div>
+                    <div class="homeHeader">
+                        <div class="wrapSearch">
+                            <div class="searchBar">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" placeholder="Freeship đơn từ 45k" />
+                                <button>Tìm kiếm</button>
+                            </div>
+
+                            <div class="userMenu">
+                                <div class="menu">
+                                    <a href="~/Home/Index"><i class="fas fa-home fa-lg" style="color: blue;"></i>Trang chủ</a>
+                                    <a href="~/Account/Login"><i class="far fa-smile-wink fa-lg" style="color: grey;"></i>Tài khoản</a>
+                                    <a href="~/Cart/Index"><span class="cartIcon"><i class="fas fa-shopping-cart" style="color: blue;"></i></span></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="bottomRoot">
+                            <div class="quicklinksContainer">
+                                <a id="quicklinksItem" href="#">điện gia dụng</a>
+                                <a id="quicklinksItem" href="#">xe cộ</a>
+                                <a id="quicklinksItem" href="#">mẹ & bé</a>
+                                <a id="quicklinksItem" href="#">khỏe đẹp</a>
+                                <a id="quicklinksItem" href="#">nhà cửa</a>
+                                <a id="quicklinksItem" href="#">sách</a>
+                                <a id="quicklinksItem" href="#">thể thao</a>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt" style="color:lightgrey"></i><h1 class="title">Giao đến: </h1><a href="#">77777777777 Hồ Chí Minh</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="navigationBar">
+
+                    <div class="categories">
+                        <a href="#"><b>Cam kết</b></a>
+                        <a href="#"><i class="fas fa-check-circle" style="color:blue"></i>100% hàng thật</a>
+                        <a href="#"><i class="fas fa-sync-alt" style="color:blue"></i>Hoàn 200% nếu hàng giả</a>
+                        <a href="#"><i class="fas fa-undo-alt" style="color:blue"></i>30 ngày đổi trả</a>
+                        <a href="#"><i class="fas fa-people-carry" style="color:blue"></i>Giao nhanh 2h</a>
+                        <a href="#"><i class="fas fa-tags" style="color:blue"></i>Giá siêu rẻ</a>
+                        <a href="#"><i class="fas fa-shipping-fast" style="color:blue"></i>Freeship mọi đơn</a>
+                    </div>
+                </div>
+            </div>
+            @*</section>*@
+        </header>
+
+        <section>
+
+            @RenderBody()
+
+        </section>
+
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
